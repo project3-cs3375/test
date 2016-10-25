@@ -1,1 +1,18 @@
 
+CREATE TABLE club_mem
+ (person_id int (11),
+ club_id int (11), 
+start_date DATE, 
+active tinyint(1), 
+PRIMARY KEY (person_id,club_id), 
+FOREIGN KEY (person_id) REFERENCES student(person_id),
+FOREIGN KEY(club_id) REFERENCES clubs(club_id));
+
+CREATE TABLE clubs 
+(club_id int NOT NULL AUTO_INCREMENT, 
+name VARCHAR(30), 
+mission VARCHAR(600), 
+prim_contact int(11) , 
+PRIMARY KEY(club_id));
+ALTER TABLE clubs ADD msg_board_id int(11);  
+
